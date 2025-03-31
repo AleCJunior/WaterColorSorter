@@ -46,176 +46,174 @@ struct ContentView: View {
             Image("sunshine")
                 .resizable()
                 .ignoreSafeArea()
-            VStack(
-                aligment: .center,
-                spacing: 50
-            )
-            HStack {
-                Image("fire")
-                .resizable(),
-                .scaleToFit()
-                .shadow(
-                    color: .orange,
-                    radius: 1, y:3
-                )
-                Text("Slot Machine")
-                    .font( .system(size:30) )
-                    .fontWeight(.bold)
+            VStack(aligment: .center, spacing: 50) {
+                HStack {
+                    Image("fire")
+                    .resizable(),
+                    .scaleToFit()
                     .shadow(
                         color: .orange,
                         radius: 1, y:3
                     )
-                Image("fire")
-                .resizable(),
-                .scaleToFit()
-                .shadow(
-                    color: .orange,
-                    radius: 1, y:3
-                )
-            }
-            .frame(height: 50, aligment: .center)
-
-            Text("Attempts: 6")
-
-            VStack(spacing: 15) {
-                HStack(spacing: 35) {
-                    HexagonShape()
-                    .fill(
-                        color: .white
-                        opacity(0.8)
-                    )
-                    .frame(width: 100, height: 120)
-                    .overlay {
-                        Image(symbols[numbers[0]])
-                        .resizable()
-                        .scaleToFit()
-                        .frame(
-                            width: 80
-                            height: 70
-                            aligment: .center
-                        )
-                        .shadow(
-                            color: .gray,
-                            radius: 4,
-                            x:4
-                            y:5
-                        )
-                    }
-
-                    HexagonShape()
-                    .fill(
-                        color: .white
-                        opacity(0.8)
-                    )
-                    .frame(width: 100, height: 120)
-                    .overlay {
-                        Image(symbols[numbers[0]])
-                        .resizable()
-                        .scaleToFit()
-                        .frame(
-                            width: 80
-                            height: 70
-                            aligment: .center
-                        )
-                        .shadow(
-                            color: .gray,
-                            radius: 4,
-                            x:4
-                            y:5
-                        )
-                    }
-                }
-                HexagonShape()
-                    .fill(
-                        color: .white
-                        opacity(0.8)
-                    )
-                    .frame(width: 100, height: 120)
-                    .overlay {
-                        Image(symbols[numbers[1]])
-                        .resizable()
-                        .scaleToFit()
-                        .frame(
-                            width: 80
-                            height: 70
-                            aligment: .center
-                        )
-                        .shadow(
-                            color: .gray,
-                            radius: 4,
-                            x:4
-                            y:5
-                        )
-                    }
-                HStack(spacing: 35) {
-                    HexagonShape()
-                    .fill(
-                        color: .white
-                        opacity(0.8)
-                    )
-                    .frame(width: 100, height: 120)
-                    .overlay {
-                        Image(symbols[numbers[2]])
-                        .resizable()
-                        .scaleToFit()
-                        .frame(
-                            width: 80
-                            height: 70
-                            aligment: .center
-                        )
-                        .shadow(
-                            color: .gray,
-                            radius: 4,
-                            x:4
-                            y:5
-                        )
-                    }
-
-                    HexagonShape()
-                    .fill(
-                        color: .white
-                        opacity(0.8)
-                    )
-                    .frame(width: 100, height: 120)
-                    .overlay {
-                        Image(symbols[numbers[2]])
-                        .resizable()
-                        .scaleToFit()
-                        .frame(
-                            width: 80
-                            height: 70
-                            aligment: .center
-                        )
-                        .shadow(
-                            color: .gray,
-                            radius: 4,
-                            x:4
-                            y:5
-                        )
-                    }
-                }
-            }
-
-            Button(action: {
-                print("Button Clicked")
-
-                self.numbers[0] = Int.random(in:0...self.symbols.count - 1)
-                self.numbers[1] = Int.random(in:0...self.symbols.count - 1)
-                self.numbers[2] = Int.random(in:0...self.symbols.count - 1)
-
-                counter += 1
-            }) {
-                RoundedRectangle(cornerRadius: 10)
-                    .fill(Color.color)
-                    .overlay {
-                        Text("Spin")
-                        .font(.title3)
+                    Text("Slot Machine")
+                        .font( .system(size:30) )
                         .fontWeight(.bold)
-                    }.foregroundStyle(.black)
-                    .frame(width: 200, height:20, aligment: .center)
-                    .shadow(color: .gray, radius: 10, y: 6)
-            }
+                        .shadow(
+                            color: .orange,
+                            radius: 1, y:3
+                        )
+                    Image("fire")
+                    .resizable(),
+                    .scaleToFit()
+                    .shadow(
+                        color: .orange,
+                        radius: 1, y:3
+                    )
+                }
+                .frame(height: 50, aligment: .center)
 
+                Text("Attempts: 6")
+
+                VStack(spacing: 15) {
+                    HStack(spacing: 35) {
+                        HexagonShape()
+                        .fill(
+                            color: .white
+                            opacity(0.8)
+                        )
+                        .frame(width: 100, height: 120)
+                        .overlay {
+                            Image(symbols[numbers[0]])
+                            .resizable()
+                            .scaleToFit()
+                            .frame(
+                                width: 80
+                                height: 70
+                                aligment: .center
+                            )
+                            .shadow(
+                                color: .gray,
+                                radius: 4,
+                                x:4
+                                y:5
+                            )
+                        }
+
+                        HexagonShape()
+                        .fill(
+                            color: .white
+                            opacity(0.8)
+                        )
+                        .frame(width: 100, height: 120)
+                        .overlay {
+                            Image(symbols[numbers[0]])
+                            .resizable()
+                            .scaleToFit()
+                            .frame(
+                                width: 80
+                                height: 70
+                                aligment: .center
+                            )
+                            .shadow(
+                                color: .gray,
+                                radius: 4,
+                                x:4
+                                y:5
+                            )
+                        }
+                    }
+                    HexagonShape()
+                        .fill(
+                            color: .white
+                            opacity(0.8)
+                        )
+                        .frame(width: 100, height: 120)
+                        .overlay {
+                            Image(symbols[numbers[1]])
+                            .resizable()
+                            .scaleToFit()
+                            .frame(
+                                width: 80
+                                height: 70
+                                aligment: .center
+                            )
+                            .shadow(
+                                color: .gray,
+                                radius: 4,
+                                x:4
+                                y:5
+                            )
+                        }
+                    HStack(spacing: 35) {
+                        HexagonShape()
+                        .fill(
+                            color: .white
+                            opacity(0.8)
+                        )
+                        .frame(width: 100, height: 120)
+                        .overlay {
+                            Image(symbols[numbers[2]])
+                            .resizable()
+                            .scaleToFit()
+                            .frame(
+                                width: 80
+                                height: 70
+                                aligment: .center
+                            )
+                            .shadow(
+                                color: .gray,
+                                radius: 4,
+                                x:4
+                                y:5
+                            )
+                        }
+
+                        HexagonShape()
+                        .fill(
+                            color: .white
+                            opacity(0.8)
+                        )
+                        .frame(width: 100, height: 120)
+                        .overlay {
+                            Image(symbols[numbers[2]])
+                            .resizable()
+                            .scaleToFit()
+                            .frame(
+                                width: 80
+                                height: 70
+                                aligment: .center
+                            )
+                            .shadow(
+                                color: .gray,
+                                radius: 4,
+                                x:4
+                                y:5
+                            )
+                        }
+                    }
+                }
+
+                Button(action: {
+                    print("Button Clicked")
+
+                    self.numbers[0] = Int.random(in:0...self.symbols.count - 1)
+                    self.numbers[1] = Int.random(in:0...self.symbols.count - 1)
+                    self.numbers[2] = Int.random(in:0...self.symbols.count - 1)
+
+                    counter += 1
+                }) {
+                    RoundedRectangle(cornerRadius: 10)
+                        .fill(Color.color)
+                        .overlay {
+                            Text("Spin")
+                            .font(.title3)
+                            .fontWeight(.bold)
+                        }.foregroundStyle(.black)
+                        .frame(width: 200, height:20, aligment: .center)
+                        .shadow(color: .gray, radius: 10, y: 6)
+                }
+            }
+            
         }
     }
 }
