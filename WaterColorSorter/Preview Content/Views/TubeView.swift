@@ -8,11 +8,18 @@
 import SwiftUI
 
 struct TubeView: View {
-    let colorStack: [Int]  // Ex: [1, 5, 2, 3, 5, 1]
+    let colorStack: [Int]
 
-    // Mapeia os índices para cores
     func colorForIndex(_ index: Int) -> Color {
-        let colors: [Color] = [.red, .blue, .green, .yellow, .purple, .orange, .pink, .cyan]
+        let colors: [Color] = [
+            .red, .blue, .green, .yellow, .purple, .orange, .pink, .cyan,
+            .mint, .teal, .indigo, .brown, .gray, .black, .white,
+            Color(hue: 0.05, saturation: 0.9, brightness: 1.0),
+            Color(hue: 0.3, saturation: 1.0, brightness: 0.75),
+            Color(hue: 0.95, saturation: 0.8, brightness: 1.0),
+            Color(hue: 0.15, saturation: 1.0, brightness: 1.0),
+            Color(hue: 0.6, saturation: 0.5, brightness: 0.8)
+        ]
         return colors.indices.contains(index) ? colors[index] : .gray
     }
 
@@ -30,7 +37,6 @@ struct TubeView: View {
     }
 }
 
-// Peça colorida
 struct ColorPiece: Shape {
     func path(in rect: CGRect) -> Path {
         return Path { path in
@@ -49,7 +55,6 @@ struct ColorPiece: Shape {
     }
 }
 
-// Preview para testar diferentes tubos
 #Preview {
     HStack(spacing: 20) {
         TubeView(colorStack: [1, 2, 2, 1])
