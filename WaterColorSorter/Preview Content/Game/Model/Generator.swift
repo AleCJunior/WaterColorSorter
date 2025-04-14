@@ -19,8 +19,8 @@ class Generator {
         return colorOrder.shuffled()
     }
 
-    static func genTubes(tubeNumber: Int, colorPerTube: Int) -> [Tube] {
-        var tubeList: [Tube] = []
+    static func genTubes(tubeNumber: Int, colorPerTube: Int) -> [[Int]] {
+        var tubeList: [[Int]] = []
         let tubesToFill = tubeNumber - 2
         let amount: Int = tubesToFill * colorPerTube
         var indexList: [Int]
@@ -29,18 +29,15 @@ class Generator {
 
         for i in 0..<tubesToFill {
             var colors: [Int] = []
-            var tube: Tube
             for j in 0..<colorPerTube {
                 colorIdx = (i * colorPerTube) + j
                 colors.append(numberList[colorIdx])
             }
-            tube = Tube(color: colors)
-            tubeList.append(tube)
+            tubeList.append(colors)
         }
         
         for i in 0...1 {
-            var tube: Tube = Tube(color: [0, 0, 0, 0])
-            tubeList.append(tube)
+            tubeList.append([0, 0, 0, 0])
         }
         
         return tubeList

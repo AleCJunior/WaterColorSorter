@@ -7,12 +7,20 @@
 
 import Foundation
 
-class GameState: ObservableObject {
-    @Published var tubes: [Tube] = Generator.genTubes(tubeNumber: 10, colorPerTube: 5)
+var tubeSelectionFirst: Int = 0
+var tubeSelectionSecond: Int = 0
+
+class GameControl: ObservableObject {
+    @Published var tubes: [[Int]] = Generator.genTubes(tubeNumber: 10, colorPerTube: 5)
     let tubeCapacity = 4
 
+    static func tapReact(index: Int) {
+        if (tubeSelectionFirst == 0) {
+            tubeSelectionFirst = index
+        }
+    }
+    
     func move(from sourceIndex: Int, to destinationIndex: Int) {
-        // Implementar lógica para mover a cor do topo de um tubo para outro
-        // Verificar se a movimentação é válida conforme as regras do jogo
+        
     }
 }

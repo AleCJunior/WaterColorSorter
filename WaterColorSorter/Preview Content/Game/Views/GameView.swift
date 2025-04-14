@@ -13,8 +13,7 @@ struct GameView: View {
     var tubeQuantity: Int
     var colorPerTube: Int
     var colorSize: CGFloat
-    var maxTubesPerLine = 4
-    
+    var maxTubesPerLine = 6
 
     var body: some View {
         VStack(spacing: 10) {
@@ -23,7 +22,10 @@ struct GameView: View {
                     let start = rowIndex * maxTubesPerLine
                     let end = min(start + maxTubesPerLine, GameTubes.count)
                     ForEach(start..<end, id: \.self) { index in
-                        TubeView(colorStack: GameTubes[index], colorSize: 40)
+                        TubeView(colorStack: GameTubes[index], colorSize: 20)
+                            .onTapGesture {
+                                GameControl.tapReact(index: index)
+                            }
                     }
                 }
             }
