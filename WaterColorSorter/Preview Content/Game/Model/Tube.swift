@@ -6,3 +6,11 @@
 //
 
 import Foundation
+
+class Tube {
+    var color: [Int]
+
+    init(color: [Int]) {
+        self.color = color
+    }
+}

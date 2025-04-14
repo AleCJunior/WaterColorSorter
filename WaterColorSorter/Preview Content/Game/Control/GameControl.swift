@@ -8,13 +8,7 @@
 import Foundation
 
 class GameState: ObservableObject {
-    @Published var tubes: [[Int]] = [
-        [1, 2, 2, 1],
-        [3, 3, 3, 0],
-        [4, 5, 4, 2],
-        [0, 0, 0, 0] // Tubo vazio para movimentação
-    ]
-    
+    @Published var tubes: [Tube] = Generator.genTubes(tubeNumber: 10, colorPerTube: 5)
     let tubeCapacity = 4
 
     func move(from sourceIndex: Int, to destinationIndex: Int) {
